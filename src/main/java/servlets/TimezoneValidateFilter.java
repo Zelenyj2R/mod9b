@@ -16,7 +16,7 @@ public class TimezoneValidateFilter extends HttpFilter {
   protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
     res.setContentType("text/html; charset=utf-8");
 
-    String zoneId  = req.getParameter("timezone");
+    String zoneId  = req.getParameter("zoneId");
     if (zoneId == null || validateTimeZone(zoneId.replace(' ', '+'))) {
       chain.doFilter(req, res);
     } else {
